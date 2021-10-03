@@ -2,8 +2,7 @@
 
 import { promises } from 'fs'
 import mkdirp from 'mkdirp'
-import { dirname, join } from 'path'
-import { basename } from 'path/posix'
+import { basename, dirname, join } from 'path'
 import { cwd } from 'process'
 import yargs from 'yargs'
 let { readFile, stat, readdir, open, } = promises
