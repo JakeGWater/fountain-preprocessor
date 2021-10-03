@@ -6,7 +6,7 @@
     "fountain-preprocessor": "./out/fountain-preprocessor.js"
   },
   "scripts": {
-    "prepublish": "tsc"
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",
