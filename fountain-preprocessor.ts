@@ -3,6 +3,9 @@
 import { promises } from 'fs'
 import mkdirp from 'mkdirp'
 import { dirname, join } from 'path'
+import { basename } from 'path/posix'
+import { cwd } from 'process'
+import yargs from 'yargs'
 let { readFile, stat, readdir, open, } = promises
 
 async function* compile_path(dirpath: string, filename: string): AsyncGenerator<string> {
@@ -34,10 +37,15 @@ async function* compile_path(dirpath: string, filename: string): AsyncGenerator<
 }
 
 async function main() {
-    let path = join(__dirname, 'out', 'script.fountain')
+    let argv = yargs.argv as any
+    let O = argv.o
+    let I = argv._[0]
+    let path = join(cwd(), O)
+    await mkdirp(dirname(O))
     let file = await open(path, 'w')
-    await mkdirp(join(__dirname, 'out'))
-    for await (let line of compile_path(__dirname, 'script.fountain')) {
+    let dir = dirname(I)
+    let filename = basename(I)
+    for await (let line of compile_path(dir, filename)) {
         file.write(line)
     }
 }
