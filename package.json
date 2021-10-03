@@ -1,0 +1,27 @@
+{
+  "name": "fountain-preprocessor",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "fountain-preprocessor": "./out/fountain-preprocessor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeGWater/fountain-preprocessor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakeGWater/fountain-preprocessor/issues"
+  },
+  "homepage": "https://github.com/JakeGWater/fountain-preprocessor#readme",
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^1.0.2",
+    "@types/node": "^16.10.2",
+    "typescript": "^4.4.3"
+  }
+}
