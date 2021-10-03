@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { promises } from 'fs'
 import mkdirp from 'mkdirp'
 import { dirname, join } from 'path'
