@@ -45,7 +45,7 @@ async function main() {
     let dir = dirname(I)
     let filename = basename(I)
     for await (let line of compile_path(dir, filename)) {
-        file.write(line)
+        await file.write(line)
     }
 }
 
